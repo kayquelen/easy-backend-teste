@@ -10,9 +10,10 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(helmet());
 app.use(compression());
+// CORS configurado para aceitar o frontend
 app.use(cors({
-  origin: ['https://ktool-new-frontend.wcegpn.easypanel.host', 'http://localhost:3000'],
-  credentials: true,
+  origin: '*',
+  credentials: false,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
